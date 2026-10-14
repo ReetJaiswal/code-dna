@@ -1,0 +1,41 @@
+{
+  "name": "code-dna",
+  "displayName": "CodeDNA",
+  "description": "AI-powered code intelligence for VS Code",
+  "version": "0.0.1",
+  "publisher": "reetjaiswal",
+  "license": "MIT",
+  "engines": { "vscode": "^1.85.0" },
+  "categories": ["Other"],
+  "activationEvents": [],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      { "command": "codedna.indexWorkspace", "title": "CodeDNA: Index Workspace" },
+      { "command": "codedna.askQuestion", "title": "CodeDNA: Ask About Your Code" }
+    ],
+    "configuration": {
+      "title": "CodeDNA",
+      "properties": {
+        "codedna.backendUrl": {
+          "type": "string",
+          "default": "http://127.0.0.1:8000",
+          "description": "URL of the CodeDNA FastAPI backend."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "build": "vite build",
+    "watch": "vite build --watch",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "typescript": "^5.4.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/vscode": "^1.85.0",
+    "vite": "^5.2.0"
+  }
+}
